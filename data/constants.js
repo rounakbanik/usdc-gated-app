@@ -1,5 +1,3 @@
-import dotenv from dotenv;
-
 // Infura API Key
 const apiKey = process.env.INFURA_API_KEY;
 
