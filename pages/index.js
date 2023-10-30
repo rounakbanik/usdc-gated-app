@@ -88,7 +88,6 @@ export default function Home() {
             <p>
               You will need to make a payment to access this gated content.
             </p>
-            <p>{apiKey} {circleSandboxApiKey}</p>
             <form onSubmit={createPaymentIntent} className={styles.mint_form}>
               <button type="submit">
                 Pay 1 USDC
