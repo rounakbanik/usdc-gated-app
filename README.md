@@ -6,7 +6,7 @@ This demo app, built using NextJS and the Circle SDK, allows developers to creat
 
 1. Clone the repository
 2. Install required packages using `npm install`.
-3. Add the Infura API key and the Circle API key in the `data/constants.js` file.
+3. Create a copy of `.env.local.sample` and name it `.env.local`. Add the Infura and Circle API keys.
 4. Deploy a version of the app to localhost using `npm run dev`.
 
 ## Usage

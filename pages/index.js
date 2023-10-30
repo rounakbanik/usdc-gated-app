@@ -11,6 +11,7 @@ import { useAccount } from "wagmi";
 // Custom imports
 import { createWalletAddress } from "@/utils/payments";
 import { checkPaymentStatus } from "@/utils/confirmation";
+import { apiKey, circleSandboxApiKey } from "@/data/constants";
 
 const inter = Inter({ subsets: ['latin'] })
 
