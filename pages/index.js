@@ -27,6 +27,7 @@ export default function Home() {
   const [hasMounted, setHasMounted] = useState(false);
 
   // Payment intent and deposit address
+  const [intentLoading, setIntentLoading] = useState(false);
   const [intent, setIntent] = useState(null);
   const [depositAddress, setDepositAddress] = useState(null);
 
@@ -51,10 +52,12 @@ export default function Home() {
   const createPaymentIntent = async (e) => {
 
     e.preventDefault();
+    setIntentLoading(true);
 
     let [intent, address] = await createWalletAddress();
     setIntent(intent);
     setDepositAddress(address);
+    setIntentLoading(false);
   }
 
   // Confirm if payment has been made
@@ -88,11 +91,12 @@ export default function Home() {
             <p>
               You will need to make a payment to access this gated content.
             </p>
-            <form onSubmit={createPaymentIntent} className={styles.mint_form}>
+            {!intentLoading && <form onSubmit={createPaymentIntent} className={styles.mint_form}>
               <button type="submit">
                 Pay 1 USDC
               </button>
-            </form>
+            </form>}
+            {intentLoading && <div className={styles.loader}></div>}
           </div>}
 
           {/* Display when intent to pay is created but payment is pending */}
